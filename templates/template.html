@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Video playback</title>
+        <style>
+            *{
+                font-size: 18pt;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form id="chooseVideo">
+            <input type="text" name="video" placeholder="videoId" list="videoIds">
+            <datalist id="videoIds">
+                {% for videoId in videoIds%}
+                <option value="{{ videoId }}">
+                {% endfor %}
+            </datalist>
+        </form>
+        <form id="chooseFrame">
+            <input type="text" placeholder="frameId">
+        </form>
+        <div id="currentFrame"></div>
+        <video id="playingVideo" src="" width="1280" height="720" controls></video>
+        <script src="../static/main.js"></script>
+    </body>
+    
+</html>
